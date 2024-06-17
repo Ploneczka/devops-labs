@@ -34,3 +34,32 @@ spec:
 # kubectl config set-context --current --namespace=lab3_1
 
 # kubectl delete service bakcend-service
+
+
+# DO LABÓW NR 3
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  name: backend
+#spec:
+#  replicas: 1
+#  selector:
+#   matchLabels:
+#      app: backend
+#  template:
+#    metadata:
+#     labels:
+#        app: backend
+#    spec:
+#      containers:
+#        - name: backend
+#          image: backend-image
+#          volumeMounts:
+#            - name: backend-data
+#              mountPath: /app/logs 
+#      volumes:
+#        - name: backend-data
+#          persistentVolumeClaim:
+#            claimName: pv_backendc
+#=======
+# kubectl delete service bakcend-service
